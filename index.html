@@ -1,0 +1,384 @@
+<!doctype html>
+<html>
+<head>
+    <title>SELLKART</title>
+    <style>
+        
+        header   
+        { text-align: center;
+        background-color: blanchedalmond;
+        font-style:italic;
+        font-family:cursive;
+        padding: 30px;}
+        
+        nav
+        {text-align: justify-all;
+        background-color: blanchedalmond;
+        padding: 15px;}
+        
+        nav a
+        {padding: 30px;
+        text-decoration: inherit;
+        color: black;
+        text-align: left;}
+        
+        nav div{
+            text-align: left;
+        }
+        
+        nav a:hover
+        {color: black;
+        background-color: white;}
+        
+        p
+        {text-align: center;
+        background-color: azure;
+        padding: 20px}
+        
+	.product-carousel-container {
+    overflow: hidden;
+}
+
+.product-grid {
+    display: flex;
+    animation: roll 30s linear infinite; /* Adjust the animation duration and timing function as needed */
+}    
+	    
+        .product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.product-card {
+  background-color: #fff;
+  padding: 20px;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.product-card h3 {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.product-card .price {
+  font-weight: bold;
+  color: #b12704;
+  margin: 10px 0;
+}
+
+.product-card .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ff9900;
+  color: #fff;
+  text-decoration: none;
+    border-radius: 5px;}
+        
+        .search-bar {
+  margin-top: 20px;
+}
+
+.search-bar input[type="text"] {
+  width: 300px;
+  padding: 10px;
+  border-color: blanchedalmond;
+  border-radius: 5px;
+}
+
+.search-bar button[type="submit"]
+        {
+  padding: 10px 20px;
+  background-color: blanchedalmond;
+  color: #111;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+	    /* Existing styles... */
+          .main-content {
+    display: flex;
+    justify-content: center; /* Horizontally center the content */
+    align-items: flex-start; /* Align content to the top */
+    flex-wrap: wrap; /* Enable wrapping for smaller screens */
+}
+
+/* Adjust the width of the product carousel container as needed */
+.product-carousel-container {
+    width: 70%;
+}
+
+/* Add styles for the shopping cart */
+.cart {
+    flex: 0 0 300px; /* Fix the width of the cart container */
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.cart h3 {
+    margin-top: 0;
+}
+
+.cart-items {
+    list-style: none;
+    padding: 0;
+}
+
+.cart-items li {
+    margin-bottom: 5px;
+    padding: 5px;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-total {
+    font-weight: bold;
+    margin-top: 10px;
+}
+.cart {
+    float: right;
+    width: 300px; /* Adjust the width as per your preference */
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px; /* Adjust the margin as needed to create spacing from other elements */
+}
+
+.cart h3 {
+    margin-top: 0;
+}
+
+.cart-items {
+    list-style: none;
+    padding: 0;
+}
+
+.cart-items li {
+    margin-bottom: 5px;
+    padding: 5px;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-total {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+    </style>
+    </head>
+<body>
+    <header>
+    <h1><span style="color: royalblue">A </span>SELLKART</h1>
+    <h2>PRODUCTS</h2>
+    </header>
+    <nav>
+    <a href="#">BUY</a>
+    <a href="#">SELL</a>
+    <a href="#">ACCOUNT</a>
+    <a href="#">ORDERS</a>
+    <a href="#">WISHLIST</a>    
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search for products...">
+        <button type="button" onclick="searchProducts()">Search</button>
+    </div>
+    </nav>
+   
+    <p>
+  Top deals
+    </p>
+     <div class="product-carousel-container">
+      <!-- Product Grid -->
+      <div class="product-grid" id="product-grid">
+        <!-- Product Cards -->
+        <div class="product-card">
+          <img src="product1.jpg" alt="Product 1">
+          <h3>Product 1</h3>
+          <p class="price">$19.99</p>
+          <a href="#" class="btn">Add to Cart</a>
+        </div>
+        <div class="product-card">
+          <img src="product2.jpg" alt="Product 2">
+          <h3>Product 2</h3>
+          <p class="price">$24.99</p>
+          <a href="#" class="btn">Add to Cart</a>
+        </div>
+        <div class="product-card">
+          <img src="product3.jpg" alt="Product 3">
+          <h3>Perfume</h3>
+          <p class="price">$14.99</p>
+          <a href="#" class="btn">Add to Cart</a>
+        </div>
+        <div class="product-card">
+          <img src="product3.jpg" alt="Product 3">
+          <h3>gucci perfume</h3>
+          <p class="price">$14.99</p>
+          <a href="#" class="btn">Add to Cart</a>
+        </div>
+        <div class="product-card">
+          <img src="product3.jpg" alt="Product 3">
+          <h3>gucci perfume</h3>
+          <p class="price">$14.99</p>
+          <a href="#" class="btn">Add to Cart</a>
+        </div>
+        <div class="product-card">
+          <img src="product3.jpg" alt="Product 3">
+          <h3>gucci perfume</h3>
+          <p class="price">$14.99</p>
+          <a href="#" class="btn">Add to Cart</a>
+        </div>
+        <div class="product-card">
+          <img src="product3.jpg" alt="Product 3">
+          <h3>gucci perfume</h3>
+          <p class="price">$14.99</p>
+          <a href="#" class="btn">Add to Cart</a>
+        </div>
+        <div class="product-card">
+          <img src="product3.jpg" alt="Product 3">
+          <h3>gucci perfume</h3>
+          <p class="price">$14.99</p>
+          <a href="#" class="btn">Add to Cart</a>
+        </div>
+        <div class="product-card">
+          <img src="product3.jpg" alt="Product 3">
+          <h3>gucci perfume</h3>
+          <p class="price">$14.99</p>
+          <a href="#" class="btn">Add to Cart</a>
+        </div>
+        <div class="product-card">
+          <img src="product3.jpg" alt="Product 3">
+          <h3>gucci perfume</h3>
+          <p class="price">$14.99</p>
+          <a href="#" class="btn">Add to Cart</a>
+        </div>
+        <div class="product-card">
+          <img src="product3.jpg" alt="Product 3">
+          <h3>gucci perfume</h3>
+          <p class="price">$14.99</p>
+          <a href="#" class="btn">Add to Cart</a>
+        </div>
+        <div class="product-card">
+          <img src="product3.jpg" alt="Product 3">
+          <h3>gucci perfume</h3>
+          <p class="price">$14.99</p>
+          <a href="#" class="btn">Add to Cart</a>
+        </div>
+        <div class="product-card">
+          <img src="product3.jpg" alt="Product 3">
+          <h3>gucci perfume</h3>
+          <p class="price">$14.99</p>
+          <a href="#" class="btn">Add to Cart</a>
+        </div>
+        <div class="product-card">
+          <img src="product3.jpg" alt="Product 3">
+          <h3>gucci perfume</h3>
+          <p class="price">$14.99</p>
+          <a href="#" class="btn">Add to Cart</a>
+        </div>
+        <div class="product-card">
+          <img src="product3.jpg" alt="Product 3">
+          <h3>ankit brand perfume</h3>
+          <p class="price">$14.99</p>
+          <a href="#" class="btn">Add to Cart</a>
+        </div>
+        <div class="product-card">
+          <img src="product3.jpg" alt="Product 3">
+          <h3>sasta perfume</h3>
+          <p class="price">$14.99</p>
+          <a href="#" class="btn">Add to Cart</a>
+        </div>
+        <div class="product-card">
+          <img src="product3.jpg" alt="Product 3">
+          <h3>mehnga perfume</h3>
+          <p class="price">$14.99</p>
+          <a href="#" class="btn">Add to Cart</a>
+        </div>
+	      
+    </div>
+    </div>
+    <!-- Cart -->
+<div class="cart" id="cart">
+    <h3>Shopping Cart</h3>
+    <ul class="cart-items" id="cartItems">
+        <!-- Cart items will be displayed here -->
+    </ul>
+    <p class="cart-total" id="cartTotal">Total: $0.00</p>
+</div>
+
+<script>
+    // Shopping cart functionality
+    const cartItems = [];
+
+    function addToCart(productName, price) {
+        cartItems.push({ name: productName, price: price });
+        updateCart();
+        alert(`Added "${productName}" to cart. Price: $${price}`);
+    }
+
+    function updateCart() {
+        const cartTotal = cartItems.reduce((total, item) => total + item.price, 0);
+        const cartTotalElement = document.getElementById("cartTotal");
+        cartTotalElement.innerText = "Total: $" + cartTotal.toFixed(2);
+
+        displayCart();
+    }
+
+    function displayCart() {
+        const cartItemsElement = document.getElementById("cartItems");
+        cartItemsElement.innerHTML = "";
+
+        cartItems.forEach(item => {
+            const listItem = document.createElement("li");
+            listItem.innerText = `${item.name} - $${item.price.toFixed(2)}`;
+            cartItemsElement.appendChild(listItem);
+        });
+    }
+
+    // Add event listeners to all "Add to Cart" buttons
+    const addToCartButtons = document.querySelectorAll(".btn");
+    addToCartButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            const productCard = button.parentElement;
+            const productName = productCard.querySelector("h3").innerText;
+            const price = parseFloat(productCard.querySelector(".price").innerText.replace("$", ""));
+            addToCart(productName, price);
+        });
+    });
+
+    // Function to handle the search bar
+    function searchProducts() {
+        const searchQuery = document.getElementById("searchInput").value.toLowerCase();
+        const productCards = document.querySelectorAll(".product-card");
+
+        productCards.forEach(card => {
+            const productName = card.querySelector("h3").innerText.toLowerCase();
+            if (productName.includes(searchQuery)) {
+                card.style.display = "block"; // Show the card
+            } else {
+                card.style.display = "none"; // Hide the card
+            }
+        });
+    }
+
+    // Call displayCart() function to show cart contents on page load
+    updateCart();
+	
+	
+</script>
+
+
+         </body>
+</html>
